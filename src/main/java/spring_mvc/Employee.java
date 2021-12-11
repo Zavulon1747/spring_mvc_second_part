@@ -1,10 +1,18 @@
 package spring_mvc;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Employee {
+    @NotBlank (message = "Not Blank, please")
+    @Size(min = 2, message = "The name's length must includes 2 or more symbols :)",max = 36)
     private String name;
+    @NotEmpty (message = "Not Empty, please")
+    @NotBlank (message = "Not Blank, please")
     private String surname;
     private int salary;
     private String department;

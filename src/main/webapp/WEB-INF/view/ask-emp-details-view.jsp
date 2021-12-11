@@ -14,9 +14,11 @@
 <form:form action="showDetails" modelAttribute="employee">
 
     Name <form:input path="name" placeholder="name"/>
+    <form:errors path="name"/>
     <br>
     <br>
     Surname <form:input path="surname" placeholder="surname"/>
+    <form:errors path="surname"/>
     <br>
     <br>
     Salary <form:input path="salary"/>
