@@ -10,7 +10,7 @@
     <br>
     Employee surname:      ${employee.surname}
     <br>
-    Employee salary:      ${employee.salary}
+    Employee salary: $      ${employee.salary}
     <br>
     Employee department:      ${employee.department}
     <br>
@@ -22,6 +22,10 @@
             <li>    ${lang}    </li>
         </c:forEach>
     </ul>
+    <br>
+    Phone number: ${employee.phoneNumber}
+    <br>
+    Email: ${employee.email}
 
 </h2>
 

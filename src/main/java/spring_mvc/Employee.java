@@ -1,9 +1,8 @@
 package spring_mvc;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import spring_mvc.validation.CheckEmail;
+
+import javax.validation.constraints.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,12 +13,18 @@ public class Employee {
     @NotEmpty (message = "Not Empty, please")
     @NotBlank (message = "Not Blank, please")
     private String surname;
+    @Min(value = 500, message = "must be greater then 499")
+    @Max(value = 5000, message = "must be lower then 5001")
     private int salary;
     private String department;
     private Map<String, String> departments;
     private String carBrand;
     private Map<String, String> carBrands;
     private String[] languages;
+    @Pattern(regexp = "\\d{1}-\\d{3}-\\d{3}-\\d{2}-\\d{2}", message = "please use pattern X-XXX-XXX-XX-XX")
+    private String phoneNumber;
+    @CheckEmail(value = "@yandex.ru", message = "email must ends with @yandex.ru")
+    private String email;
 
     public Employee() {
         departments = new HashMap<>();
@@ -102,6 +107,22 @@ public class Employee {
 
     public void setLanguages(String[] languages) {
         this.languages = languages;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
